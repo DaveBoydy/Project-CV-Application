@@ -1,0 +1,52 @@
+#root {
+  background-color: #242424;
+}
+
+#root .eye-button {
+  position: fixed;
+  top: 79%;
+  right: 4%;
+  z-index: 99;
+  border-radius: 50%;
+}
+
+#root.preview-active .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Jio Phone */
+@media (max-width: 240px) {
+  #root.preview-active .overlay {
+    width: 150vw;
+    height: 150vh;
+  }
+}
+
+/* Desktop medium */
+@media screen and (min-width: 1280px) {
+  #root {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+  }
+
+  #root .eye-button {
+    display: none;
+  }
+}
+
+/* Desktop large */
+@media screen and (min-width: 1440px) {
+  #root {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

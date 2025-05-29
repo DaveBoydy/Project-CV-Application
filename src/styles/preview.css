@@ -1,0 +1,206 @@
+.preview-wrapper {
+  background-color: #3b3b3b;
+  display: none;
+}
+
+.preview-wrapper.preview-active {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 80px;
+  left: 16px;
+  transform: scale(0.5);
+  transform-origin: top left;
+  z-index: 99;
+}
+
+.preview-wrapper.preview-active .preview-container {
+  width: 184vw;
+}
+
+.preview-container {
+  width: 794px;
+  height: 1123px;
+  background-color: white;
+  color: #333333;
+  padding: 40px;
+  display: grid;
+  gap: 8px;
+  grid-template-areas:
+    'name name contact'
+    'skills experience experience'
+    'education experience experience';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px auto 384px;
+  box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 1);
+}
+
+.preview-container ul {
+  padding-left: 24px;
+}
+
+.preview-container li {
+  margin-bottom: 8px;
+}
+
+.preview-container li:empty {
+  display: none;
+}
+
+.preview-container .education li p {
+  margin-bottom: 8px;
+}
+
+.preview-container h1,
+.preview-container h2,
+.preview-container h3 {
+  color: #333333;
+}
+
+.preview-container p,
+.preview-container ul {
+  color: #444444;
+}
+
+.preview-container .section {
+  margin-bottom: 4px;
+}
+
+.preview-container .name,
+.preview-container .education,
+.preview-container .contact,
+.preview-container .contact div,
+.preview-container .skills,
+.preview-container .experience {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-container .name {
+  grid-area: name;
+}
+.preview-container .contact {
+  grid-area: contact;
+  align-items: flex-end;
+}
+
+.preview-container .contact div {
+  gap: 16px;
+}
+
+.preview-container .number,
+.preview-container .email,
+.preview-container .location {
+  position: relative;
+}
+
+.preview-container .contact-phone,
+.preview-container .contact-email,
+.preview-container .contact-location {
+  position: absolute;
+  left: -24px;
+}
+
+.preview-container .education,
+.preview-container .skills,
+.preview-container .experience {
+  padding-top: 32px;
+}
+
+.preview-container .education {
+  grid-area: education;
+  border-top: 2px solid;
+}
+
+.preview-container .skills {
+  grid-area: skills;
+}
+.preview-container .experience {
+  grid-area: experience;
+  border-left: 2px solid;
+  padding-left: 32px;
+}
+
+.preview-container .education li {
+  margin-top: 1rem;
+}
+
+.preview-container .education li:nth-child(1) {
+  margin-top: 0;
+}
+
+@media print {
+  .preview-container {
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  @page {
+    size: A4;
+  }
+}
+
+/* Jio Phone */
+@media (max-width: 240px) {
+  .preview-wrapper.preview-active .preview-container {
+    width: 320vw;
+  }
+
+  .preview-wrapper.preview-active {
+    top: 20px;
+    left: 25px;
+    transform: scale(0.35);
+  }
+}
+
+/* Tablet (portrait) */
+@media screen and (min-width: 600px) {
+  .preview-wrapper.preview-active .preview-container {
+    width: 125vw;
+  }
+
+  .preview-wrapper.preview-active {
+    top: 180px;
+    left: 100px;
+  }
+}
+
+/* Tablet (landscape) or small lap tops */
+@media screen and (min-width: 768px) {
+  .preview-wrapper.preview-active .preview-container {
+    width: 100vw;
+  }
+
+  .preview-wrapper.preview-active {
+    top: 20px;
+    left: 250px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .preview-wrapper.preview-active,
+  .preview-wrapper.preview-active .preview-container {
+    width: 80vw;
+  }
+
+  .preview-wrapper.preview-active {
+    left: 300px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .preview-wrapper {
+    padding: 32px 16px;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .preview-wrapper {
+    padding: 32px;
+  }
+}
